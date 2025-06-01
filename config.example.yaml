@@ -1,0 +1,37 @@
+---
+datasets:
+  endpoints:
+    example-objects-list:
+      url: https://api.restful-api.dev/objects
+    example-object-single:
+      url: https://api.restful-api.dev/objects/{{ $.vars.id }}
+  queries:
+    object-names:
+      name: List object names
+      summary: Retrieve an array of strings containing object names
+      pipeline:
+        steps:
+          - query:
+              endpoint: example-objects-list
+            transforms:
+              - $.name
+
+    object-colors:
+      name: List object names and their colors
+      summary: Retrieve an array of objects containing a name and associated color
+      pipeline:
+        steps:
+          - target: ids
+            query:
+              endpoint: example-objects-list
+            transforms:
+              - $.id
+          - target: objects
+            parallel: true
+            query:
+              endpoint: example-object-single
+              foreach: ids
+              variables_json:
+                id: item
+            transforms:
+              - ["$.", {"name": "name", "color": "data.color"}]
