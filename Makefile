@@ -16,7 +16,7 @@ bin:
 	@mkdir ${@}
 bin/orchestra: bin
 	@go generate .
-	@go build -o $(@) ./cmd/orchestra/
+	@go build -tags embedded -o $(@) ./cmd/orchestra/
 
 static/main.wasm:
 	@make -C ui -B

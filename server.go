@@ -1,7 +1,6 @@
 package orchestra
 
 import (
-	"embed"
 	"fmt"
 	_ "image/gif"
 	_ "image/jpeg"
@@ -16,11 +15,6 @@ import (
 
 	"github.com/ghetzel/go-stockutil/log"
 )
-
-//go:embed static/assets
-//go:embed static/index.html
-//go:embed static/main.wasm
-var embedded embed.FS
 
 const DefaultAddress = `127.0.0.1:42305`
 
