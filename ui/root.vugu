@@ -1,0 +1,52 @@
+<style>
+html,
+body,
+main {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    position: relative;
+}
+
+#content {
+    background: var(--pk-pdc-content-bg);
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 100vw;
+    height: calc(100vh - var(--pk-pdc-logo-height));
+}
+
+#mainview {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+#mainview>* {
+    flex: 1;
+}
+</style>
+
+<main role="main">
+    <article id="content">
+        <div id="mainview">
+            hi
+        </div>
+    </article>
+</main>

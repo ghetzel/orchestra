@@ -17,7 +17,9 @@ import (
 	"github.com/ghetzel/go-stockutil/log"
 )
 
-//go:embed ui
+//go:embed static/assets
+//go:embed static/index.html
+//go:embed static/main.wasm
 var embedded embed.FS
 
 const DefaultAddress = `127.0.0.1:42305`
@@ -51,7 +53,7 @@ func NewServer(config *Config) *Server {
 }
 
 func (server *Server) init() {
-	if subfs, err := fs.Sub(embedded, `ui`); err == nil {
+	if subfs, err := fs.Sub(embedded, `static`); err == nil {
 		server.HandleFunc(`/orchestra/v1/config/`, server.httpGetConfig)
 		server.HandleFunc(`/orchestra/v1/queries/`, server.httpDatasetQuery)
 

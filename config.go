@@ -24,7 +24,7 @@ var ConfigFile string = func() (config string) {
 
 	config = fileutil.MustExpandUser(config)
 
-	if _, err := os.Stat(config); errors.Is(err, os.ErrNotExist) {
+	if _, err := os.Stat(config); err != nil && !errors.Is(err, os.ErrNotExist) {
 		log.Panicf("config error: %v", err)
 	}
 

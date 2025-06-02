@@ -10,6 +10,7 @@ require (
 	github.com/ghetzel/go-stockutil v1.13.0
 	github.com/ghetzel/testify v1.4.1
 	github.com/vektah/gqlparser/v2 v2.5.27
+	github.com/vugu/vugu v0.4.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -40,6 +41,8 @@ require (
 	github.com/pkg/sftp v1.13.9 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/urfave/negroni v1.0.0 // indirect
+	github.com/vugu/vjson v0.0.0-20200505061711-f9cbed27d3d9 // indirect
+	github.com/vugu/xxhash v0.0.0-20191111030615-ed24d0179019 // indirect
 	golang.org/x/crypto v0.38.0 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect

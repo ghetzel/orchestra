@@ -25,11 +25,12 @@ func main() {
 		cli.StringFlag{
 			Name:  `config, c`,
 			Usage: `The name of the configuration file to load (if present)`,
-			Value: `orchestra.yaml`,
+			Value: orchestra.ConfigFile,
 		},
 	}
 
 	app.Action = func(c *cli.Context) {
+		orchestra.ConfigFile = c.String(`config`)
 		log.FatalIf(orchestra.LoadDefaultConfig())
 
 		log.FatalIf(
